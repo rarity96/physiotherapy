@@ -1,0 +1,12 @@
+*.pyc
+*~
+__pycache__
+
+# Env
+.env
+myvenv/
+venv/
+venv_physiotherapy/
+
+# Database
+db.sqlite3
