@@ -39,7 +39,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "phisio.urls"
+ROOT_URLCONF = "physio.urls"
 
 TEMPLATES = [
     {
@@ -57,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "phisio.wsgi.application"
+WSGI_APPLICATION = "physio.wsgi.application"
 
 
 # Database
