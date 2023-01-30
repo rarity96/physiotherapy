@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+    {{ employee }}
     <div class="site-blocks-cover overlay" style="background-image: url({% static 'website/images/hero_bg_1.jpg' %});"
          data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -14,7 +15,8 @@
                                     class="typed-words"></span>
                             </h1>
 
-                            <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'contact' %}" class="btn btn-primary btn-pill">Get
+                            <p data-aos="fade-up" data-aos-delay="100"><a href="{% url 'contact' %}"
+                                                                          class="btn btn-primary btn-pill">Get
                                 Started</a></p>
                         </div>
                     </div>
@@ -252,68 +254,41 @@
                 <div class="col-12">
 
                     <div class="owl-carousel-2 owl-carousel">
-
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'website/images/person_1.jpg' %}" alt="Image"
-                                     class="img-fluid rounded-circle w-50 mx-auto">
+                            <div class="d-block block-testimony mx-auto text-center">
+                                <div class="person w-25 mx-auto mb-4">
+                                    <img src="{{ first_customer.photo.url }}" alt="Image"
+                                         class="img-fluid rounded-circle w-50 mx-auto">
+                                </div>
+                                <div>
+                                    <h2 class="h5 mb-4">{{ first_customer.name }}</h2>
+                                    <blockquote>{{ first_customer.history }}
+                                    </blockquote>
+                                </div>
                             </div>
-                            <div>
-                                <h2 class="h5 mb-4">Katie Johnson</h2>
-                                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                                    accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum
-                                    tempora
-                                    ipsam!&rdquo;
-                                </blockquote>
+                            <div class="d-block block-testimony mx-auto text-center">
+                                <div class="person w-25 mx-auto mb-4">
+                                    <img src="{{ second_customer.photo.url }}" alt="Image"
+                                         class="img-fluid rounded-circle w-50 mx-auto">
+                                </div>
+                                <div>
+                                    <h2 class="h5 mb-4">{{ second_customer.name }}</h2>
+                                    <blockquote>{{ second_customer.history }}
+                                    </blockquote>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'website/images/person_2.jpg' %}" alt="Image"
-                                     class="img-fluid rounded-circle w-50 mx-auto">
+                            <div class="d-block block-testimony mx-auto text-center">
+                                <div class="person w-25 mx-auto mb-4">
+                                    <img src="{{ third_customer.photo.url }}" alt="Image"
+                                         class="img-fluid rounded-circle w-50 mx-auto">
+                                </div>
+                                <div>
+                                    <h2 class="h5 mb-4">{{ third_customer.name }}</h2>
+                                    <blockquote>{{ third_customer.history }}
+                                    </blockquote>
+                                </div>
                             </div>
-                            <div>
-                                <h2 class="h5 mb-4">Jun Mars</h2>
-                                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                                    accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum
-                                    tempora
-                                    ipsam!&rdquo;
-                                </blockquote>
-                            </div>
-                        </div>
-
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'website/images/person_3.jpg' %}" alt="Image"
-                                     class="img-fluid rounded-circle w-50 mx-auto">
-                            </div>
-                            <div>
-                                <h2 class="h5 mb-4">Katie Johnson</h2>
-                                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                                    accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum
-                                    tempora
-                                    ipsam!&rdquo;
-                                </blockquote>
-                            </div>
-                        </div>
-                        <div class="d-block block-testimony mx-auto text-center">
-                            <div class="person w-25 mx-auto mb-4">
-                                <img src="{% static 'website/images/person_4.jpg' %}" alt="Image"
-                                     class="img-fluid rounded-circle w-50 mx-auto">
-                            </div>
-                            <div>
-                                <h2 class="h5 mb-4">Jun Mars</h2>
-                                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                                    accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum
-                                    tempora
-                                    ipsam!&rdquo;
-                                </blockquote>
-                            </div>
-                        </div>
-
-
                     </div>
+
                 </div>
 
 
@@ -321,8 +296,8 @@
         </div>
     </div>
 
-<script src="{% static 'website/js/typed.js' %}"></script>
-<script>
+    <script src="{% static 'website/js/typed.js' %}"></script>
+    <script>
         var typed = new Typed('.typed-words', {
             strings: ["pain", " stress", " fatigue"],
             typeSpeed: 80,
